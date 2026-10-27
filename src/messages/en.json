@@ -1,0 +1,40 @@
+{
+  "siteName": "NY Students Network",
+  "siteNameShort": "NY Students",
+  "tagline": "Studying in New York, all the services you need",
+  "description": "NY Students Network offers cosmetic and dental care, study support, express shipping, home, insurance and more for students in New York.",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Studying in New York? We have your back.",
+    "subtitle": "From cosmetic and dental care to shipping and insurance, NY Students Network brings multiple services together to handle life in the U.S.",
+    "cta": "Explore services",
+    "ctaContact": "Get in touch"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Pick the service you need, learn more, and contact us directly",
+    "learnMore": "Learn more",
+    "back": "Back to all services",
+    "highlights": "Highlights",
+    "placeholder": "Details coming soon"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Questions? Reach out any time and we will get back to you soon.",
+    "wechat": "WeChat",
+    "phone": "Phone",
+    "email": "Email",
+    "address": "Address",
+    "pending": "To be added"
+  },
+  "footer": {
+    "rights": "All rights reserved"
+  },
+  "lang": {
+    "switchTo": "中文"
+  }
+}

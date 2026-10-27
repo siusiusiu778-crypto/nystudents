@@ -1,0 +1,40 @@
+{
+  "siteName": "纽约留学生网",
+  "siteNameShort": "NY Students",
+  "tagline": "留学纽约，一站式生活与服务",
+  "description": "纽约留学生网为在纽约的留学生提供医美牙科、留学、快递、家居、保险等一站式服务。",
+  "nav": {
+    "home": "首页",
+    "services": "业务介绍",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "title": "留学纽约，我们一直在你身边",
+    "subtitle": "从医美牙科到快递保险，纽约留学生网整合多条业务线，为你解决在美生活的每一件事。",
+    "cta": "查看全部业务",
+    "ctaContact": "立即咨询"
+  },
+  "services": {
+    "title": "我们的业务",
+    "subtitle": "选择你需要的服务，了解详情并直接联系我们",
+    "learnMore": "了解详情",
+    "back": "返回全部业务",
+    "highlights": "服务亮点",
+    "placeholder": "详细介绍待补充"
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "有任何问题，欢迎随时联系，我们会尽快回复。",
+    "wechat": "微信",
+    "phone": "电话",
+    "email": "邮箱",
+    "address": "地址",
+    "pending": "待补充"
+  },
+  "footer": {
+    "rights": "版权所有"
+  },
+  "lang": {
+    "switchTo": "English"
+  }
+}
