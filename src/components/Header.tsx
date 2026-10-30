@@ -69,7 +69,7 @@ export default function Header({
         <div className="flex items-center gap-4">
           <Link
             href={cta.href}
-            className="hidden rounded-sm bg-brand px-[18px] py-2.5 text-[0.85rem] font-semibold whitespace-nowrap text-white hover:opacity-85 md:inline-block"
+            className="hidden rounded-sm bg-accent px-[18px] py-2.5 text-[0.85rem] font-semibold whitespace-nowrap text-white hover:opacity-85 md:inline-block"
           >
             {cta.label}
           </Link>
