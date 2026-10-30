@@ -31,7 +31,7 @@ export default async function ServicePage({
     <>
       <section className="bg-brand-soft">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:py-16">
-          <Link href={`/${locale}#services`} className="text-sm text-brand">
+          <Link href={`/${locale}/services`} className="text-sm text-brand">
             ← {t.services.back}
           </Link>
           <div className="mt-4 text-4xl">{service.icon}</div>

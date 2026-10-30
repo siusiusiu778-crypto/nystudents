@@ -10,8 +10,12 @@ export default function Header({
   locale: Locale;
   t: Dictionary;
 }) {
-  const links = [{ href: `/${locale}#services`, label: t.nav.services }];
-  const cta = { href: `/${locale}#contact`, label: t.nav.contact };
+  const links = [
+    { href: `/${locale}/services`, label: t.nav.services },
+    { href: `/${locale}/news`, label: t.nav.news },
+    { href: `/${locale}/about`, label: t.nav.about },
+  ];
+  const cta = { href: `/${locale}/contact`, label: t.nav.contact };
 
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-[10px]">

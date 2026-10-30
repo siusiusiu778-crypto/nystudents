@@ -6,6 +6,8 @@
   "nav": {
     "home": "Home",
     "services": "Services",
+    "news": "News & Stories",
+    "about": "About Us",
     "contact": "Contact"
   },
   "hero": {
@@ -35,9 +37,57 @@
     "pending": "To be added"
   },
   "footer": {
-    "rights": "All rights reserved"
+    "rights": "All rights reserved",
+    "services": "Services",
+    "company": "Company",
+    "contact": "Contact"
   },
   "lang": {
     "switchTo": "中文"
+  },
+  "servicesPage": {
+    "title": "Services",
+    "subtitle": "All business lines under NY Students Network. Pick the service you need to learn more."
+  },
+  "news": {
+    "title": "News & Stories",
+    "subtitle": "Updates, press coverage and student stories, plus practical guides for life in the US.",
+    "empty": "Content coming soon.",
+    "sections": [
+      {
+        "title": "News",
+        "desc": "Latest updates, events and press from the group and its business lines (TBD)"
+      },
+      {
+        "title": "Stories",
+        "desc": "Real experiences from students and parents (TBD)"
+      },
+      {
+        "title": "Guides",
+        "desc": "Practical know-how on housing, insurance, healthcare and shipping, linking to the matching service (TBD)"
+      }
+    ]
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "NY Students Network is a one-stop platform serving Chinese students in New York.",
+    "blocks": [
+      {
+        "title": "Our Story",
+        "desc": "The group's story and mission (TBD)"
+      },
+      {
+        "title": "Milestones",
+        "desc": "Founding and key moments (TBD)"
+      },
+      {
+        "title": "Team",
+        "desc": "Meet the core team (TBD)"
+      },
+      {
+        "title": "Credentials & Partners",
+        "desc": "Licenses, credentials and partner organizations (TBD)"
+      }
+    ]
   }
 }

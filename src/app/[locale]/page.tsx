@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import ContactSection from "@/components/ContactSection";
-import { services } from "@/data/services";
+import ServiceGrid from "@/components/ServiceGrid";
 import { getDictionary, hasLocale } from "@/lib/i18n";
 
 export default async function HomePage({ params }: PageProps<"/[locale]">) {
@@ -37,21 +37,8 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
       <section id="services" className="mx-auto max-w-6xl scroll-mt-20 px-4 pt-16">
         <h2 className="text-2xl font-bold">{t.services.title}</h2>
         <p className="mt-2 text-black/60">{t.services.subtitle}</p>
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <Link
-              key={s.slug}
-              href={`/${locale}/services/${s.slug}`}
-              className="group rounded-sm border border-line p-6 transition hover:border-brand hover:shadow-md"
-            >
-              <div className="text-3xl">{s.icon}</div>
-              <h3 className="mt-3 text-lg font-semibold">{s.name[locale]}</h3>
-              <p className="mt-2 text-sm text-black/60">{s.summary[locale]}</p>
-              <span className="mt-4 inline-block text-sm font-medium text-brand">
-                {t.services.learnMore} →
-              </span>
-            </Link>
-          ))}
+        <div className="mt-8">
+          <ServiceGrid locale={locale} t={t} />
         </div>
       </section>
 
