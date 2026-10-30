@@ -8,14 +8,14 @@
 ## 业务线（栏目暂定，后续可调整）
 | 业务线 | slug | 说明 |
 |---|---|---|
-| 医美 / 牙科 | `medical` | 待补充详细介绍 |
+| TSI 牙科诊所 The Smile Institute Dental Care | `tsi` | 待补充详细介绍 |
 | 留明留学 Luminary Education | `liuming` |
 | 留明求职 Luminary Career | `luminary-career` | 待补充详细介绍 |
-| 快递 | `express` | 待补充详细介绍 |
-| Celehome | `celehome` | 待补充详细介绍 |
+| SkylineEx 快递 SkylineEx Global Express | `express` | 待补充详细介绍 |
+| Celehome Realty | `celehome` | 待补充详细介绍 |
 | 美窝 USWOO（租房） | `uswoo` | 已有独立官网 https://uswoo-website.vercel.app/ ，主站只做简介 + 跳转 |
-| 医美 Aura Institute | `aura` | 待补充详细介绍 |
-| 保险 | `insurance` | 待补充详细介绍 |
+| Aura Institute 医美 Aura Institute Medical Spa | `aura` | 待补充详细介绍 |
+| OSSCINS 途美保险 | `insurance` | 待补充详细介绍 |
 | Wukong | `wukong` | 待补充详细介绍 |
 | 北美留学生基金会 Overseas Students Foundation | `foundation` | 待补充详细介绍 |
 

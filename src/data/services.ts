@@ -30,7 +30,7 @@ const pendingAudience: Service["audience"] = [
 
 /*
  * 每条业务线要填的内容（新增业务线时复制一个条目）：
- *   slug      网址里的名字，如 /zh/services/medical
+ *   slug      网址里的名字，如 /zh/services/tsi
  *   name      业务线名称（中英）
  *   summary   一句话介绍
  *   offerings 具体做什么服务，3~6 项，每项标题 + 说明
@@ -40,12 +40,12 @@ const pendingAudience: Service["audience"] = [
  */
 export const services: Service[] = [
   {
-    slug: "medical",
-    icon: "✨",
-    name: { zh: "医美 / 牙科", en: "Cosmetic & Dental" },
+    slug: "tsi",
+    icon: "🦷",
+    name: { zh: "TSI 牙科诊所", en: "The Smile Institute Dental Care" },
     summary: {
-      zh: "专业医美与牙科服务，中文沟通，预约便捷。",
-      en: "Professional cosmetic and dental care with Chinese-speaking support.",
+      zh: "专业牙科服务，中文沟通，预约便捷。",
+      en: "Professional dental care with Chinese-speaking support.",
     },
     offerings: pendingOfferings,
     audience: pendingAudience,
@@ -78,7 +78,7 @@ export const services: Service[] = [
   {
     slug: "express",
     icon: "📦",
-    name: { zh: "快递", en: "Express" },
+    name: { zh: "SkylineEx 快递", en: "SkylineEx Global Express" },
     summary: {
       zh: "中美快递与同城配送，安全可靠。",
       en: "Reliable US-China and local express delivery.",
@@ -90,7 +90,7 @@ export const services: Service[] = [
   {
     slug: "celehome",
     icon: "🏠",
-    name: { zh: "Celehome", en: "Celehome" },
+    name: { zh: "Celehome Realty", en: "Celehome Realty" },
     summary: {
       zh: "家居与居住相关服务，让你的新家更舒适。",
       en: "Home and living services to make your place feel like home.",
@@ -141,7 +141,7 @@ export const services: Service[] = [
   {
     slug: "insurance",
     icon: "🛡️",
-    name: { zh: "保险", en: "Insurance" },
+    name: { zh: "OSSCINS 途美保险", en: "OSSCINS Insurance" },
     summary: {
       zh: "留学生医疗、意外等保险咨询与办理。",
       en: "Insurance advice and enrollment for health, accident and more.",
@@ -165,7 +165,7 @@ export const services: Service[] = [
   {
     slug: "aura",
     icon: "💎",
-    name: { zh: "医美 Aura Institute", en: "Aura Institute" },
+    name: { zh: "Aura Institute 医美", en: "Aura Institute Medical Spa" },
     summary: {
       zh: "Aura Institute 医美服务介绍待补充。",
       en: "Aura Institute cosmetic care description coming soon.",
