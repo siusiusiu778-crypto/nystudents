@@ -10,8 +10,9 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
     { href: `/${locale}/career`, label: t.nav.career },
     { href: `/${locale}/contact`, label: t.nav.contact },
   ];
-  // 业务线分两列：前 4 条在第一列，其余在第二列
-  const serviceCols = [services.slice(0, 4), services.slice(4)];
+  // 业务线平分两列
+  const half = Math.ceil(services.length / 2);
+  const serviceCols = [services.slice(0, half), services.slice(half)];
   const labelClass =
     "mb-3 text-[0.72rem] font-semibold tracking-[0.1em] text-white/50 uppercase";
   const linkClass = "text-[0.9rem] text-white/80 transition-colors hover:text-white";

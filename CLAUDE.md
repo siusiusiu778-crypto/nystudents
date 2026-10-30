@@ -9,14 +9,15 @@
 | 业务线 | slug | 说明 |
 |---|---|---|
 | 医美 / 牙科 | `medical` | 待补充详细介绍 |
-| 留明 | `liuming` | 待补充详细介绍 |
+| 留明留学 Luminary Education | `liuming` |
+| 留明求职 Luminary Career | `luminary-career` | 待补充详细介绍 |
 | 快递 | `express` | 待补充详细介绍 |
 | Celehome | `celehome` | 待补充详细介绍 |
 | 美窝 USWOO（租房） | `uswoo` | 已有独立官网 https://uswoo-website.vercel.app/ ，主站只做简介 + 跳转 |
 | 医美 Aura Institute | `aura` | 待补充详细介绍 |
 | 保险 | `insurance` | 待补充详细介绍 |
 | Wukong | `wukong` | 待补充详细介绍 |
-| 基金会 | `foundation` | 待补充详细介绍 |
+| 北美留学生基金会 Overseas Students Foundation | `foundation` | 待补充详细介绍 |
 
 业务线数据统一放在 `src/data/services.ts`，首页和详情页都从这里读取。
 每条业务线的内容框架：`name` 名称、`summary` 一句话介绍、`offerings` 具体服务（标题+说明）、`audience` 受众人群、`link` 跳转链接（官网/预约/小程序，留空显示「链接待补充」）。文件顶部有填写说明。

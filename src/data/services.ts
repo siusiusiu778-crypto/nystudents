@@ -54,10 +54,22 @@ export const services: Service[] = [
   {
     slug: "liuming",
     icon: "🎓",
-    name: { zh: "留明", en: "Liuming" },
+    name: { zh: "留明留学", en: "Luminary Education" },
     summary: {
       zh: "留学相关服务，陪伴你的学业与申请之路。",
       en: "Study-related services supporting your academic journey.",
+    },
+    offerings: pendingOfferings,
+    audience: pendingAudience,
+    link: { url: "" },
+  },
+  {
+    slug: "luminary-career",
+    icon: "💼",
+    name: { zh: "留明求职", en: "Luminary Career" },
+    summary: {
+      zh: "留学生求职与职业发展服务，介绍待补充。",
+      en: "Job search and career services for students; description coming soon.",
     },
     offerings: pendingOfferings,
     audience: pendingAudience,
@@ -165,7 +177,7 @@ export const services: Service[] = [
   {
     slug: "foundation",
     icon: "💛",
-    name: { zh: "基金会", en: "Foundation" },
+    name: { zh: "北美留学生基金会", en: "Overseas Students Foundation" },
     summary: {
       zh: "公益与资助项目，回馈留学生社区。",
       en: "Charity and support programs giving back to the student community.",
