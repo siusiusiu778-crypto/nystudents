@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import { services } from "@/data/services";
 import LanguageSwitch from "./LanguageSwitch";
 import MobileMenu from "./MobileMenu";
 
@@ -10,8 +11,12 @@ export default function Header({
   locale: Locale;
   t: Dictionary;
 }) {
+  const serviceItems = services.map((s) => ({
+    href: `/${locale}/services/${s.slug}`,
+    label: s.name[locale],
+  }));
   const links = [
-    { href: `/${locale}/services`, label: t.nav.services },
+    { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
   ];
@@ -28,15 +33,38 @@ export default function Header({
           {t.siteName}
         </Link>
         <nav className="hidden items-center gap-[clamp(12px,1.8vw,22px)] md:flex">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              className="border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-brand hover:text-foreground"
-            >
-              {l.label}
-            </Link>
-          ))}
+          {links.map((l) => {
+            const linkClass =
+              "border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-brand hover:text-foreground";
+            if (!l.children) {
+              return (
+                <Link key={l.href} href={l.href} className={linkClass}>
+                  {l.label}
+                </Link>
+              );
+            }
+            return (
+              <div key={l.href} className="group relative">
+                <Link href={l.href} className={linkClass}>
+                  {l.label}
+                </Link>
+                <div className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                  <ul className="min-w-[200px] rounded-sm border border-line bg-white py-2 shadow-lg">
+                    {l.children.map((c) => (
+                      <li key={c.href}>
+                        <Link
+                          href={c.href}
+                          className="block px-4 py-2 text-[0.86rem] whitespace-nowrap text-ink-soft hover:bg-brand-soft hover:text-foreground"
+                        >
+                          {c.label}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            );
+          })}
         </nav>
         <div className="flex items-center gap-4">
           <Link

@@ -6,7 +6,11 @@ import { useState } from "react";
 export default function MobileMenu({
   links,
 }: {
-  links: { href: string; label: string }[];
+  links: {
+    href: string;
+    label: string;
+    children?: { href: string; label: string }[];
+  }[];
 }) {
   const [open, setOpen] = useState(false);
 
@@ -29,14 +33,29 @@ export default function MobileMenu({
       {open && (
         <div className="absolute inset-x-0 top-full border-b border-line bg-white px-[clamp(20px,5vw,56px)] py-2">
           {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
-              onClick={() => setOpen(false)}
-              className="block border-b border-line py-4 text-[0.95rem] font-medium last:border-b-0"
-            >
-              {l.label}
-            </Link>
+            <div key={l.href} className="border-b border-line last:border-b-0">
+              <Link
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-4 text-[0.95rem] font-medium"
+              >
+                {l.label}
+              </Link>
+              {l.children && (
+                <div className="-mt-2 pb-3 pl-4">
+                  {l.children.map((c) => (
+                    <Link
+                      key={c.href}
+                      href={c.href}
+                      onClick={() => setOpen(false)}
+                      className="block py-2 text-[0.9rem] text-ink-soft"
+                    >
+                      {c.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
