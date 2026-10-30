@@ -93,25 +93,9 @@
     ]
   },
   "city": {
-    "title": "City Guides",
-    "subtitle": "Neighborhoods, getting around and local life in New York and beyond (content TBD).",
-    "blocks": [
-      {
-        "title": "Neighborhoods",
-        "desc": "Where to live and what each area is like (TBD)"
-      },
-      {
-        "title": "Getting Around",
-        "desc": "Subway, buses and commuting around the city (TBD)"
-      },
-      {
-        "title": "Student Life",
-        "desc": "Food, shopping and things to do near campus (TBD)"
-      },
-      {
-        "title": "Essentials",
-        "desc": "Banking, phone plans, health and other setup basics (TBD)"
-      }
-    ]
+    "title": "Our Cities",
+    "subtitle": "Student networks serving Chinese students in each city.",
+    "linkPending": "Link coming soon",
+    "visit": "Visit website"
   }
 }

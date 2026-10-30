@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
+import { cities } from "@/data/cities";
 import { services } from "@/data/services";
 import LanguageSwitch from "./LanguageSwitch";
 import MobileMenu from "./MobileMenu";
@@ -15,9 +16,13 @@ export default function Header({
     href: `/${locale}/services/${s.slug}`,
     label: s.name[locale],
   }));
+  const cityItems = cities.map((c) => ({
+    href: c.url || `/${locale}/city#${c.slug}`,
+    label: c.name[locale],
+  }));
   const links = [
     { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
-    { href: `/${locale}/city`, label: t.nav.city },
+    { href: `/${locale}/city`, label: t.nav.city, children: cityItems },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
   ];

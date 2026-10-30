@@ -27,7 +27,7 @@
 | 首页 | `/[locale]` | 简介 + 业务线入口 + 联系 |
 | 业务介绍 | `/[locale]/services` | 全部业务线总览 |
 | 业务线详情 | `/[locale]/services/[slug]` | 数据来自 `services.ts` |
-| 城市 | `/[locale]/city` | 城市指南：社区、交通、留学生活、落地必备（内容待补充） |
+| 城市 | `/[locale]/city` | 各城市留学生网（波士顿、纽约、加州），导航下拉同步，数据在 `src/data/cities.ts`，链接待补充 |
 | 新闻与故事 | `/[locale]/news` | 新闻动态 / 用户故事 / 留学指南（内容待补充） |
 | 关于我们 | `/[locale]/about` | 集团介绍、历程、团队、资质（内容待补充） |
 | 联系我们 | `/[locale]/contact` | 微信 / 电话 / 邮箱 / 地址 |
