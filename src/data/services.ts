@@ -33,8 +33,8 @@ const pendingAudience: Service["audience"] = [
  *   slug      网址里的名字，如 /zh/services/medical
  *   name      业务线名称（中英）
  *   summary   一句话介绍
- *   offerings 具体做什么服务，按 bullet point 来写，数量不限，每项标题 + 说明
- *   audience  受众人群，按 bullet point 来写，数量不限（谁会需要、什么场景）
+ *   offerings 具体做什么服务，3~6 项，每项标题 + 说明
+ *   audience  受众人群，2~4 条（谁会需要、什么场景）
  *   link      跳转链接（官网 / 预约 / 小程序），没有就留空 url: ""
  * 文案均为占位，待补充真实业务介绍
  */
