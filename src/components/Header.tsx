@@ -17,6 +17,7 @@ export default function Header({
   }));
   const links = [
     { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
+    { href: `/${locale}/city`, label: t.nav.city },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
   ];

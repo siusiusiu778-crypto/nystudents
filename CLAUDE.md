@@ -21,12 +21,13 @@
 每条业务线的内容框架：`name` 名称、`summary` 一句话介绍、`offerings` 具体服务（标题+说明）、`audience` 受众人群、`link` 跳转链接（官网/预约/小程序，留空显示「链接待补充」）。文件顶部有填写说明。
 
 ## 页面框架
-导航：Services 业务介绍 / News & Stories 新闻与故事 / About Us 关于我们 / Contact 联系我们（黑色按钮）。点 Logo 回首页。
+导航：Services 业务介绍 / City 城市 / News & Stories 新闻与故事 / About Us 关于我们 / Contact 联系我们（黑色按钮）。点 Logo 回首页。
 | 页面 | 路由 | 说明 |
 |---|---|---|
 | 首页 | `/[locale]` | 简介 + 业务线入口 + 联系 |
 | 业务介绍 | `/[locale]/services` | 全部业务线总览 |
 | 业务线详情 | `/[locale]/services/[slug]` | 数据来自 `services.ts` |
+| 城市 | `/[locale]/city` | 城市指南：社区、交通、留学生活、落地必备（内容待补充） |
 | 新闻与故事 | `/[locale]/news` | 新闻动态 / 用户故事 / 留学指南（内容待补充） |
 | 关于我们 | `/[locale]/about` | 集团介绍、历程、团队、资质（内容待补充） |
 | 联系我们 | `/[locale]/contact` | 微信 / 电话 / 邮箱 / 地址 |
