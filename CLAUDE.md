@@ -38,7 +38,7 @@
 - 部署目标：Vercel
 
 ## 品牌
-- Logo：放在 `public/logo.svg`（或 `.png`），尚未提供时用文字占位
+- Logo：放在 `public/logo.svg`（或 `.png`），已提供 `public/logo.png`（蓝色方形图标）
 - 主色：定义在 `src/app/globals.css` 的 CSS 变量 `--brand`，尚未提供时用占位色
 - 风格：干净、可信、手机优先（访客多用手机）
 

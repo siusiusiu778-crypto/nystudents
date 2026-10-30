@@ -25,12 +25,13 @@ export default function Header({
   return (
     <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-[10px]">
       <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-[clamp(20px,5vw,56px)] py-[18px]">
-        {/* 拿到 Logo 后放到 public/logo.svg，并替换文字标 */}
         <Link
           href={`/${locale}`}
-          className="font-heading text-[1.3rem] font-bold tracking-[0.01em] whitespace-nowrap"
+          aria-label={t.siteName}
+          className="flex shrink-0 items-center"
         >
-          {t.siteName}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/logo.png" alt={t.siteName} width={40} height={40} className="h-10 w-10" />
         </Link>
         <nav className="hidden items-center gap-[clamp(12px,1.8vw,22px)] md:flex">
           {links.map((l) => {
