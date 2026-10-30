@@ -9,7 +9,7 @@
     "city": "City",
     "news": "News & Stories",
     "about": "About Us",
-    "join": "Join Us",
+    "career": "Career",
     "contact": "Contact"
   },
   "hero": {
@@ -99,8 +99,8 @@
     "linkPending": "Link coming soon",
     "visit": "Visit website"
   },
-  "join": {
-    "title": "Join Us",
+  "career": {
+    "title": "Career",
     "subtitle": "Build the platform that supports Chinese students in the US with us.",
     "blocks": [
       {

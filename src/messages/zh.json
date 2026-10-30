@@ -9,7 +9,7 @@
     "city": "城市",
     "news": "新闻与故事",
     "about": "关于我们",
-    "join": "加入我们",
+    "career": "职业机会",
     "contact": "联系我们"
   },
   "hero": {
@@ -99,8 +99,8 @@
     "linkPending": "链接待补充",
     "visit": "前往官网"
   },
-  "join": {
-    "title": "加入我们",
+  "career": {
+    "title": "职业机会",
     "subtitle": "和我们一起，为在美国的中国留学生打造更好的服务平台。",
     "blocks": [
       {
