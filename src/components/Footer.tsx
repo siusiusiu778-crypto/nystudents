@@ -50,7 +50,7 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
           © 2026 {t.siteName} · {t.footer.rights}
         </p>
         <div className="overflow-hidden pt-7 pb-5 text-center">
-          <div className="font-heading text-[clamp(1.1rem,5.2vw,4.4rem)] leading-none font-extrabold tracking-[-0.01em] whitespace-nowrap">
+          <div className="font-heading text-[clamp(1.6rem,8vw,6.2rem)] leading-[1.05] font-extrabold tracking-[-0.01em] whitespace-pre-line">
             {t.footer.wordmark}
           </div>
         </div>
