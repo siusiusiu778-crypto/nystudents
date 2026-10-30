@@ -151,6 +151,18 @@ export const services: Service[] = [
     link: { url: "" },
   },
   {
+    slug: "aura",
+    icon: "💎",
+    name: { zh: "医美 Aura Institute", en: "Aura Institute" },
+    summary: {
+      zh: "Aura Institute 医美服务介绍待补充。",
+      en: "Aura Institute cosmetic care description coming soon.",
+    },
+    offerings: pendingOfferings,
+    audience: pendingAudience,
+    link: { url: "" },
+  },
+  {
     slug: "foundation",
     icon: "💛",
     name: { zh: "基金会", en: "Foundation" },

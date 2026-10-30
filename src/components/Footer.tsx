@@ -10,6 +10,8 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
     { href: `/${locale}/career`, label: t.nav.career },
     { href: `/${locale}/contact`, label: t.nav.contact },
   ];
+  // 业务线分两列：前 4 条在第一列，其余在第二列
+  const serviceCols = [services.slice(0, 4), services.slice(4)];
   const labelClass =
     "mb-3 text-[0.72rem] font-semibold tracking-[0.1em] text-white/50 uppercase";
   const linkClass = "text-[0.9rem] text-white/80 transition-colors hover:text-white";
@@ -22,17 +24,21 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
             <div className={labelClass}>{t.siteName}</div>
             <p className="text-[0.86rem] leading-[1.7] text-white/60">{t.tagline}</p>
           </div>
-          <div className="min-w-[200px]">
+          <div>
             <div className={labelClass}>{t.footer.services}</div>
-            <ul className="grid gap-2">
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <Link href={`/${locale}/services/${s.slug}`} className={linkClass}>
-                    {s.name[locale]}
-                  </Link>
-                </li>
+            <div className="grid grid-cols-2 gap-x-10 sm:gap-x-14">
+              {[serviceCols[0], serviceCols[1]].map((col, i) => (
+                <ul key={i} className="grid content-start gap-2">
+                  {col.map((s) => (
+                    <li key={s.slug}>
+                      <Link href={`/${locale}/services/${s.slug}`} className={linkClass}>
+                        {s.name[locale]}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               ))}
-            </ul>
+            </div>
           </div>
           <div className="min-w-[200px]">
             <div className={labelClass}>{t.footer.company}</div>
