@@ -7,6 +7,7 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
     { href: `/${locale}/city`, label: t.nav.city },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
+    { href: `/${locale}/join`, label: t.nav.join },
     { href: `/${locale}/contact`, label: t.nav.contact },
   ];
   const labelClass =

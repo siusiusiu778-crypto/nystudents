@@ -9,6 +9,7 @@
     "city": "City",
     "news": "News & Stories",
     "about": "About Us",
+    "join": "Join Us",
     "contact": "Contact"
   },
   "hero": {
@@ -97,5 +98,27 @@
     "subtitle": "Where we serve Chinese students.",
     "linkPending": "Link coming soon",
     "visit": "Visit website"
+  },
+  "join": {
+    "title": "Join Us",
+    "subtitle": "Build the platform that supports Chinese students in the US with us.",
+    "blocks": [
+      {
+        "title": "Why Join Us",
+        "desc": "Our culture, mission and what we offer (TBD)"
+      },
+      {
+        "title": "Open Positions",
+        "desc": "Current openings across our business lines (TBD)"
+      },
+      {
+        "title": "Internships",
+        "desc": "Opportunities for students and recent graduates (TBD)"
+      },
+      {
+        "title": "How to Apply",
+        "desc": "Send your resume and we will get back to you (TBD)"
+      }
+    ]
   }
 }

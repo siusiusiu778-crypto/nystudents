@@ -25,6 +25,7 @@ export default function Header({
     { href: `/${locale}/city`, label: t.nav.city, children: cityItems },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
+    { href: `/${locale}/join`, label: t.nav.join },
   ];
   const cta = { href: `/${locale}/contact`, label: t.nav.contact };
 
