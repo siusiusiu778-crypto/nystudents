@@ -1,11 +1,14 @@
 @import "tailwindcss";
 
+/* 设计变量参考 USWOO 官网（黑白极简），主站保持中性，各业务线保留自己的点缀色 */
 :root {
   --background: #ffffff;
-  --foreground: #1a1a1a;
-  /* 占位主色，拿到品牌主色后替换这两个值 */
-  --brand: #1e40af;
-  --brand-soft: #eff4ff;
+  --foreground: #141414;
+  --brand: #0f0f0f;
+  --brand-soft: #f6f5f3;
+  --ink-soft: #656260;
+  --ink-faint: #9c9894;
+  --line: #e7e4e0;
 }
 
 @theme inline {
@@ -13,13 +16,25 @@
   --color-foreground: var(--foreground);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
-  --font-sans: var(--font-geist-sans);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-line: var(--line);
+  --font-sans: var(--font-inter);
+  --font-heading: var(--font-poppins);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    var(--font-geist-sans), "PingFang SC", "Hiragino Sans GB",
+    var(--font-inter), "PingFang SC", "Hiragino Sans GB",
     "Microsoft YaHei", Arial, sans-serif;
+}
+
+h1,
+h2,
+h3 {
+  font-family:
+    var(--font-poppins), var(--font-inter), "PingFang SC",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
 }

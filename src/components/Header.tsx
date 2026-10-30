@@ -14,7 +14,7 @@ export default function Header({
       <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
         <Link href={`/${locale}`} className="flex items-center gap-2">
           {/* 拿到 Logo 后放到 public/logo.svg，并替换下面的占位方块 */}
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand text-sm font-bold text-white">
+          <span className="flex h-8 w-8 items-center justify-center rounded-sm bg-brand text-sm font-bold text-white">
             NY
           </span>
           <span className="font-semibold">{t.siteName}</span>

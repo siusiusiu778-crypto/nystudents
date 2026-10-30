@@ -19,7 +19,7 @@ export default function LanguageSwitch({
   return (
     <Link
       href={href}
-      className="rounded-full border border-brand px-3 py-1 text-sm text-brand hover:bg-brand-soft"
+      className="rounded-sm border border-brand px-3 py-1 text-sm text-brand hover:bg-brand-soft"
     >
       {label}
     </Link>

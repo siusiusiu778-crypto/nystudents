@@ -44,7 +44,7 @@ export default async function ServicePage({
         <h2 className="text-xl font-bold">{t.services.highlights}</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-3">
           {service.highlights.map((h, i) => (
-            <li key={i} className="rounded-xl border border-black/10 p-4">
+            <li key={i} className="rounded-sm border border-line p-4">
               {h[locale]}
             </li>
           ))}

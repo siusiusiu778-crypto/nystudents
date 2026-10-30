@@ -20,13 +20,13 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="#services"
-              className="rounded-full bg-brand px-6 py-3 font-medium text-white hover:opacity-90"
+              className="rounded-sm bg-brand px-6 py-3 font-medium text-white hover:opacity-90"
             >
               {t.hero.cta}
             </Link>
             <Link
               href="#contact"
-              className="rounded-full border border-brand px-6 py-3 font-medium text-brand hover:bg-white"
+              className="rounded-sm border border-brand px-6 py-3 font-medium text-brand hover:bg-white"
             >
               {t.hero.ctaContact}
             </Link>
@@ -42,7 +42,7 @@ export default async function HomePage({ params }: PageProps<"/[locale]">) {
             <Link
               key={s.slug}
               href={`/${locale}/services/${s.slug}`}
-              className="group rounded-2xl border border-black/10 p-6 transition hover:border-brand hover:shadow-md"
+              className="group rounded-sm border border-line p-6 transition hover:border-brand hover:shadow-md"
             >
               <div className="text-3xl">{s.icon}</div>
               <h3 className="mt-3 text-lg font-semibold">{s.name[locale]}</h3>
