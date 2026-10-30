@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import LanguageSwitch from "./LanguageSwitch";
+import MobileMenu from "./MobileMenu";
 
 export default function Header({
   locale,
@@ -9,25 +10,40 @@ export default function Header({
   locale: Locale;
   t: Dictionary;
 }) {
+  const links = [{ href: `/${locale}#services`, label: t.nav.services }];
+  const cta = { href: `/${locale}#contact`, label: t.nav.contact };
+
   return (
-    <header className="sticky top-0 z-10 border-b border-black/5 bg-white/90 backdrop-blur">
-      <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
-        <Link href={`/${locale}`} className="flex items-center gap-2">
-          {/* 拿到 Logo 后放到 public/logo.svg，并替换下面的占位方块 */}
-          <span className="flex h-8 w-8 items-center justify-center rounded-sm bg-brand text-sm font-bold text-white">
-            NY
-          </span>
-          <span className="font-semibold">{t.siteName}</span>
+    <header className="sticky top-0 z-40 border-b border-line bg-white/90 backdrop-blur-[10px]">
+      <div className="mx-auto flex max-w-[1180px] items-center justify-between gap-6 px-[clamp(20px,5vw,56px)] py-[18px]">
+        {/* 拿到 Logo 后放到 public/logo.svg，并替换文字标 */}
+        <Link
+          href={`/${locale}`}
+          className="font-heading text-[1.3rem] font-bold tracking-[0.01em] whitespace-nowrap"
+        >
+          {t.siteName}
         </Link>
-        <nav className="flex items-center gap-4 text-sm">
-          <Link href={`/${locale}#services`} className="hidden hover:text-brand sm:inline">
-            {t.nav.services}
-          </Link>
-          <Link href={`/${locale}#contact`} className="hidden hover:text-brand sm:inline">
-            {t.nav.contact}
+        <nav className="hidden items-center gap-[clamp(12px,1.8vw,22px)] md:flex">
+          {links.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-brand hover:text-foreground"
+            >
+              {l.label}
+            </Link>
+          ))}
+        </nav>
+        <div className="flex items-center gap-4">
+          <Link
+            href={cta.href}
+            className="hidden rounded-sm bg-brand px-[18px] py-2.5 text-[0.85rem] font-semibold whitespace-nowrap text-white hover:opacity-85 md:inline-block"
+          >
+            {cta.label}
           </Link>
           <LanguageSwitch locale={locale} label={t.lang.switchTo} />
-        </nav>
+          <MobileMenu links={[...links, cta]} />
+        </div>
       </div>
     </header>
   );
