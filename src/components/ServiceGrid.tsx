@@ -9,12 +9,12 @@ export default function ServiceGrid({ locale, t }: { locale: Locale; t: Dictiona
         <Link
           key={s.slug}
           href={`/${locale}/services/${s.slug}`}
-          className="group rounded-sm border border-line p-6 transition hover:border-brand hover:shadow-md"
+          className="group rounded-sm border border-line p-6 transition hover:border-accent hover:shadow-md"
         >
           <div className="text-3xl">{s.icon}</div>
           <h3 className="mt-3 text-lg font-semibold">{s.name[locale]}</h3>
           <p className="mt-2 text-sm text-ink-soft">{s.summary[locale]}</p>
-          <span className="mt-4 inline-block text-sm font-medium text-brand">
+          <span className="mt-4 inline-block text-sm font-medium text-accent">
             {t.services.learnMore} →
           </span>
         </Link>

@@ -6,6 +6,8 @@
   --foreground: #141414;
   --brand: #0f0f0f;
   --brand-soft: #f6f5f3;
+  /* 点缀色：Logo 蓝，只用于小面积（链接、悬停、焦点），不做大色块 */
+  --accent: #2e3191;
   --ink-soft: #656260;
   --ink-faint: #9c9894;
   --line: #e7e4e0;
@@ -16,6 +18,7 @@
   --color-foreground: var(--foreground);
   --color-brand: var(--brand);
   --color-brand-soft: var(--brand-soft);
+  --color-accent: var(--accent);
   --color-ink-soft: var(--ink-soft);
   --color-ink-faint: var(--ink-faint);
   --color-line: var(--line);
@@ -37,4 +40,9 @@ h3 {
   font-family:
     var(--font-poppins), var(--font-inter), "PingFang SC",
     "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
 }

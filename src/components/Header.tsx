@@ -35,7 +35,7 @@ export default function Header({
         <nav className="hidden items-center gap-[clamp(12px,1.8vw,22px)] md:flex">
           {links.map((l) => {
             const linkClass =
-              "border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-brand hover:text-foreground";
+              "border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-accent hover:text-foreground";
             if (!l.children) {
               return (
                 <Link key={l.href} href={l.href} className={linkClass}>
