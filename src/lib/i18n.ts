@@ -3,7 +3,7 @@ import en from "@/messages/en.json";
 
 export const locales = ["zh", "en"] as const;
 export type Locale = (typeof locales)[number];
-export const defaultLocale: Locale = "zh";
+export const defaultLocale: Locale = "en";
 
 const dictionaries = { zh, en };
 export type Dictionary = typeof zh;

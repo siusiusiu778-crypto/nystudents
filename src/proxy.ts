@@ -6,9 +6,8 @@ export function proxy(request: NextRequest) {
   const first = pathname.split("/")[1];
   if (hasLocale(first)) return;
 
-  const accepted = request.headers.get("accept-language") ?? "";
-  const locale = /^en/i.test(accepted) ? "en" : defaultLocale;
-  request.nextUrl.pathname = `/${locale}${pathname}`;
+  // 英文为主站：未带语言前缀的访问一律进入默认语言，中文通过右上角切换
+  request.nextUrl.pathname = `/${defaultLocale}${pathname}`;
   return NextResponse.redirect(request.nextUrl);
 }
 
