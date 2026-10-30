@@ -69,6 +69,20 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "uswoo",
+    icon: "🏢",
+    name: { zh: "美窝 USWOO", en: "USWOO" },
+    summary: {
+      zh: "租房与安居服务，帮你找到适合的城市和住处。",
+      en: "Rental and settling-in services to help you find your place in the city.",
+    },
+    highlights: [
+      { zh: "覆盖纽约、芝加哥、洛杉矶等城市（待补充）", en: "NYC, Chicago, LA and more (TBD)" },
+      { zh: "看房到入住全程协助（待补充）", en: "Support from touring to move-in (TBD)" },
+      { zh: "社区与落地资源（待补充）", en: "Community and local resources (TBD)" },
+    ],
+  },
+  {
     slug: "insurance",
     icon: "🛡️",
     name: { zh: "保险", en: "Insurance" },

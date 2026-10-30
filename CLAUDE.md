@@ -12,6 +12,7 @@
 | 留明 | `liuming` | 待补充详细介绍 |
 | 快递 | `express` | 待补充详细介绍 |
 | Celehome | `celehome` | 待补充详细介绍 |
+| 美窝 USWOO（租房） | `uswoo` | 已有独立官网 https://uswoo-website.vercel.app/ ，主站只做简介 + 跳转 |
 | 保险 | `insurance` | 待补充详细介绍 |
 | Wukong | `wukong` | 待补充详细介绍 |
 | 基金会 | `foundation` | 待补充详细介绍 |
