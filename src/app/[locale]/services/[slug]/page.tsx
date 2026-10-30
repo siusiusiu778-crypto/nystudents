@@ -41,15 +41,43 @@ export default async function ServicePage({
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pt-12">
-        <h2 className="text-xl font-bold">{t.services.highlights}</h2>
+        <h2 className="text-xl font-bold">{t.services.offerings}</h2>
         <ul className="mt-4 grid gap-3 sm:grid-cols-3">
-          {service.highlights.map((h, i) => (
+          {service.offerings.map((o, i) => (
             <li key={i} className="rounded-sm border border-line p-4">
-              {h[locale]}
+              <h3 className="font-semibold">{o.title[locale]}</h3>
+              <p className="mt-1 text-sm text-ink-soft">{o.desc[locale]}</p>
             </li>
           ))}
         </ul>
-        <p className="mt-8 text-sm text-black/40">{t.services.placeholder}</p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pt-12">
+        <h2 className="text-xl font-bold">{t.services.audience}</h2>
+        <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+          {service.audience.map((a, i) => (
+            <li key={i} className="rounded-sm bg-brand-soft p-4">
+              {a[locale]}
+            </li>
+          ))}
+        </ul>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pt-12">
+        {service.link.url ? (
+          <a
+            href={service.link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block rounded-sm bg-brand px-6 py-3 font-medium text-white hover:opacity-85"
+          >
+            {service.link.label?.[locale] ?? t.services.visit} ↗
+          </a>
+        ) : (
+          <span className="inline-block rounded-sm border border-line px-6 py-3 text-ink-faint">
+            {t.services.linkPending}
+          </span>
+        )}
       </section>
 
       <ContactSection t={t} />

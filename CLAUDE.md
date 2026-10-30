@@ -18,6 +18,7 @@
 | 基金会 | `foundation` | 待补充详细介绍 |
 
 业务线数据统一放在 `src/data/services.ts`，首页和详情页都从这里读取。
+每条业务线的内容框架：`name` 名称、`summary` 一句话介绍、`offerings` 具体服务（标题+说明）、`audience` 受众人群、`link` 跳转链接（官网/预约/小程序，留空显示「链接待补充」）。文件顶部有填写说明。
 
 ## 技术栈
 - Next.js (App Router) + TypeScript + Tailwind CSS

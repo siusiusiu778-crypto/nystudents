@@ -19,8 +19,11 @@
     "subtitle": "Pick the service you need, learn more, and contact us directly",
     "learnMore": "Learn more",
     "back": "Back to all services",
-    "highlights": "Highlights",
-    "placeholder": "Details coming soon"
+    "placeholder": "Details coming soon",
+    "offerings": "What we offer",
+    "audience": "Who it's for",
+    "visit": "Visit website",
+    "linkPending": "Link coming soon"
   },
   "contact": {
     "title": "Contact Us",

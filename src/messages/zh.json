@@ -19,8 +19,11 @@
     "subtitle": "选择你需要的服务，了解详情并直接联系我们",
     "learnMore": "了解详情",
     "back": "返回全部业务",
-    "highlights": "服务亮点",
-    "placeholder": "详细介绍待补充"
+    "placeholder": "详细介绍待补充",
+    "offerings": "我们提供的服务",
+    "audience": "适合谁",
+    "visit": "前往官网",
+    "linkPending": "链接待补充"
   },
   "contact": {
     "title": "联系我们",
