@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { cities } from "@/data/cities";
-import { services } from "@/data/services";
+import { serviceCategories, services } from "@/data/services";
 import LanguageSwitch from "./LanguageSwitch";
 import MobileMenu from "./MobileMenu";
 
@@ -12,16 +12,22 @@ export default function Header({
   locale: Locale;
   t: Dictionary;
 }) {
-  const serviceItems = services.map((s) => ({
-    href: `/${locale}/services/${s.slug}`,
-    label: s.name[locale],
-  }));
+  const serviceGroups = serviceCategories
+    .filter((c) => c.inDropdown)
+    .map((c) => ({
+      key: c.key,
+      title: c.name.en,
+      subtitle: c.name.zh,
+      items: services
+        .filter((s) => s.category === c.key)
+        .map((s) => ({ href: `/${locale}/services/${s.slug}`, label: s.name[locale] })),
+    }));
   const cityItems = cities.map((c) => ({
     href: c.url || `/${locale}/city#${c.slug}`,
     label: c.name[locale],
   }));
   const links = [
-    { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
+    { href: `/${locale}/services`, label: t.nav.services, groups: serviceGroups },
     { href: `/${locale}/city`, label: t.nav.city, children: cityItems },
     { href: `/${locale}/news`, label: t.nav.news },
     { href: `/${locale}/about`, label: t.nav.about },
@@ -44,6 +50,39 @@ export default function Header({
           {links.map((l) => {
             const linkClass =
               "border-b border-transparent px-0.5 py-1 text-[0.86rem] font-medium whitespace-nowrap text-ink-soft transition-colors hover:border-accent hover:text-foreground";
+            if (l.groups) {
+              return (
+                <div key={l.href} className="group relative">
+                  <Link href={l.href} className={linkClass}>
+                    {l.label}
+                  </Link>
+                  <div className="invisible absolute top-full left-1/2 -translate-x-1/2 pt-4 opacity-0 transition group-focus-within:visible group-focus-within:opacity-100 group-hover:visible group-hover:opacity-100">
+                    <div className="grid w-max grid-cols-3 gap-x-10 rounded-sm border border-line bg-white p-6 shadow-lg">
+                      {l.groups.map((g) => (
+                        <div key={g.key} className="min-w-[160px]">
+                          <div className="border-b border-line pb-3">
+                            <div className="text-[0.86rem] font-semibold">{g.title}</div>
+                            <div className="mt-0.5 text-[0.8rem] text-ink-faint">{g.subtitle}</div>
+                          </div>
+                          <ul className="mt-3 grid gap-1">
+                            {g.items.map((i) => (
+                              <li key={i.href}>
+                                <Link
+                                  href={i.href}
+                                  className="block py-1 text-[0.86rem] whitespace-nowrap text-ink-soft hover:text-foreground"
+                                >
+                                  {i.label}
+                                </Link>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              );
+            }
             if (!l.children) {
               return (
                 <Link key={l.href} href={l.href} className={linkClass}>
