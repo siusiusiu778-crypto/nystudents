@@ -10,12 +10,6 @@ export default function MobileMenu({
     href: string;
     label: string;
     children?: { href: string; label: string }[];
-    groups?: {
-      key: string;
-      title: string;
-      subtitle: string;
-      items: { href: string; label: string }[];
-    }[];
   }[];
 }) {
   const [open, setOpen] = useState(false);
@@ -47,27 +41,6 @@ export default function MobileMenu({
               >
                 {l.label}
               </Link>
-              {l.groups && (
-                <div className="-mt-2 pb-3 pl-4">
-                  {l.groups.map((g) => (
-                    <div key={g.key} className="pt-2">
-                      <div className="text-[0.72rem] font-semibold tracking-[0.08em] text-ink-faint uppercase">
-                        {g.title} · {g.subtitle}
-                      </div>
-                      {g.items.map((c) => (
-                        <Link
-                          key={c.href}
-                          href={c.href}
-                          onClick={() => setOpen(false)}
-                          className="block py-2 text-[0.9rem] text-ink-soft"
-                        >
-                          {c.label}
-                        </Link>
-                      ))}
-                    </div>
-                  ))}
-                </div>
-              )}
               {l.children && (
                 <div className="-mt-2 pb-3 pl-4">
                   {l.children.map((c) => (

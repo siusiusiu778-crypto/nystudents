@@ -2,12 +2,8 @@ import type { Locale } from "@/lib/i18n";
 
 type Text = Record<Locale, string>;
 
-export type ServiceCategory = "education" | "lifestyle" | "health" | "community";
-
 export type Service = {
   slug: string;
-  /** 分类：用于导航下拉分组 */
-  category: ServiceCategory;
   icon: string;
   name: Text;
   /** 一句话介绍，显示在首页卡片和详情页顶部 */
@@ -42,22 +38,9 @@ const pendingAudience: Service["audience"] = [
  *   link      跳转链接（官网 / 预约 / 小程序），没有就留空 url: ""
  * 文案均为占位，待补充真实业务介绍
  */
-// 导航下拉的分组；inDropdown 为 false 的分类暂不在下拉里显示（业务线仍在首页和页脚）
-export const serviceCategories: {
-  key: ServiceCategory;
-  name: Text;
-  inDropdown: boolean;
-}[] = [
-  { key: "education", name: { en: "Education & Career", zh: "教育与职业" }, inDropdown: true },
-  { key: "lifestyle", name: { en: "Lifestyle & Services", zh: "生活与基础服务" }, inDropdown: true },
-  { key: "health", name: { en: "Health & Wellness", zh: "医疗与健康" }, inDropdown: true },
-  { key: "community", name: { en: "Community & Impact", zh: "社区与社会影响" }, inDropdown: false },
-];
-
 const serviceList: Service[] = [
   {
     slug: "tsi",
-    category: "health",
     icon: "🦷",
     name: { zh: "TSI 牙科诊所", en: "The Smile Institute" },
     summary: {
@@ -70,7 +53,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "liuming",
-    category: "education",
     icon: "🎓",
     name: { zh: "留明留学", en: "Luminary Education" },
     summary: {
@@ -83,7 +65,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "luminary-career",
-    category: "education",
     icon: "💼",
     name: { zh: "留明求职", en: "Luminary Career" },
     summary: {
@@ -96,7 +77,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "express",
-    category: "lifestyle",
     icon: "📦",
     name: { zh: "天寄线快递", en: "Skyline Express" },
     summary: {
@@ -109,7 +89,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "celehome",
-    category: "lifestyle",
     icon: "🏠",
     name: { zh: "Celehome", en: "Celehome" },
     summary: {
@@ -122,7 +101,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "uswoo",
-    category: "lifestyle",
     icon: "🏢",
     name: { zh: "美窝 USWOO", en: "USWOO" },
     summary: {
@@ -162,7 +140,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "insurance",
-    category: "lifestyle",
     icon: "🛡️",
     name: { zh: "OSSCINS 途美保险", en: "OSSCINS Insurance" },
     summary: {
@@ -175,7 +152,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "wukong",
-    category: "lifestyle",
     icon: "🐒",
     name: { zh: "Wukong 悟空传媒", en: "Wukong Media" },
     summary: {
@@ -188,7 +164,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "aura",
-    category: "health",
     icon: "💎",
     name: { zh: "Aura Institute 医美", en: "Aura Institute" },
     summary: {
@@ -201,7 +176,6 @@ const serviceList: Service[] = [
   },
   {
     slug: "foundation",
-    category: "community",
     icon: "💛",
     name: { zh: "北美留学生基金会", en: "Overseas Students Foundation" },
     summary: {
