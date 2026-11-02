@@ -38,7 +38,7 @@ const pendingAudience: Service["audience"] = [
  *   link      跳转链接（官网 / 预约 / 小程序），没有就留空 url: ""
  * 文案均为占位，待补充真实业务介绍
  */
-export const services: Service[] = [
+const serviceList: Service[] = [
   {
     slug: "tsi",
     icon: "🦷",
@@ -187,5 +187,10 @@ export const services: Service[] = [
     link: { url: "" },
   },
 ];
+
+// 首页、导航下拉、页脚统一按英文名首字母排序（中英文页面顺序一致），新增业务线无需手动排位置
+export const services: Service[] = [...serviceList].sort((a, b) =>
+  a.name.en.localeCompare(b.name.en, "en", { sensitivity: "base" }),
+);
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
