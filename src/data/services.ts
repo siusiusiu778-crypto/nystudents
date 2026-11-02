@@ -78,7 +78,7 @@ export const services: Service[] = [
   {
     slug: "express",
     icon: "📦",
-    name: { zh: "SkylineEx 快递", en: "SkylineEx Global Express" },
+    name: { zh: "天寄线快递", en: "Skyline Express" },
     summary: {
       zh: "中美快递与同城配送，安全可靠。",
       en: "Reliable US-China and local express delivery.",
@@ -102,7 +102,7 @@ export const services: Service[] = [
   {
     slug: "uswoo",
     icon: "🏢",
-    name: { zh: "美窝 USWOO", en: "USWOO" },
+    name: { zh: "美窝 USWOO", en: "USWOO Realty" },
     summary: {
       zh: "租房与安居服务，帮你找到适合的城市和住处。",
       en: "Rental and settling-in services to help you find your place in the city.",
@@ -153,7 +153,7 @@ export const services: Service[] = [
   {
     slug: "wukong",
     icon: "🐒",
-    name: { zh: "Wukong", en: "Wukong" },
+    name: { zh: "Wukong 悟空传媒", en: "Wukong Media" },
     summary: {
       zh: "Wukong 业务介绍待补充。",
       en: "Wukong description coming soon.",

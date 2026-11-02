@@ -2,6 +2,7 @@
 
 ## 项目定位
 - 官网的作用：**业务介绍 + 服务导流**。访客了解各业务线，再通过微信 / 电话 / 表单联系对应业务。
+- 域名：最终使用 **overseasstudent.com**。旧的集团站 overseasstudent.com 与纽约站 nystudents.net 合并为本站（OSSC，Overseas Students Services Corp，2012 年成立）。
 - 目标用户：在纽约的中国留学生及家长、准留学生。
 - 语言：**中英双语**，英文为默认语言（`/en`，主站），中文（`/zh`）。所有文案放在 `messages/zh.json` 和 `messages/en.json`，不要把文字写死在组件里。
 
@@ -11,12 +12,12 @@
 | TSI 牙科诊所 The Smile Institute Dental Care | `tsi` | 待补充详细介绍 |
 | 留明留学 Luminary Education | `liuming` |
 | 留明求职 Luminary Career | `luminary-career` | 待补充详细介绍 |
-| SkylineEx 快递 SkylineEx Global Express | `express` | 待补充详细介绍 |
+| 天寄线快递 Skyline Express | `express` | 待补充详细介绍 |
 | Celehome Realty | `celehome` | 待补充详细介绍 |
-| 美窝 USWOO（租房） | `uswoo` | 已有独立官网 https://uswoo-website.vercel.app/ ，主站只做简介 + 跳转 |
+| 美窝 USWOO（USWOO Realty，租房/购房） | `uswoo` | 已有独立官网 https://uswoo-website.vercel.app/ ，主站只做简介 + 跳转 |
 | Aura Institute 医美 Aura Institute Medical Spa | `aura` | 待补充详细介绍 |
 | OSSCINS 途美保险 | `insurance` | 待补充详细介绍 |
-| Wukong | `wukong` | 待补充详细介绍 |
+| Wukong 悟空传媒 Wukong Media | `wukong` | 待补充详细介绍 |
 | 北美留学生基金会 Overseas Students Foundation | `foundation` | 待补充详细介绍 |
 
 业务线数据统一放在 `src/data/services.ts`，首页和详情页都从这里读取。
