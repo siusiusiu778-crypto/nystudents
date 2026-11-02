@@ -42,7 +42,7 @@ export const services: Service[] = [
   {
     slug: "tsi",
     icon: "🦷",
-    name: { zh: "TSI 牙科诊所", en: "The Smile Institute Dental Care" },
+    name: { zh: "TSI 牙科诊所", en: "The Smile Institute" },
     summary: {
       zh: "专业牙科服务，中文沟通，预约便捷。",
       en: "Professional dental care with Chinese-speaking support.",
@@ -90,7 +90,7 @@ export const services: Service[] = [
   {
     slug: "celehome",
     icon: "🏠",
-    name: { zh: "Celehome Realty", en: "Celehome Realty" },
+    name: { zh: "Celehome", en: "Celehome" },
     summary: {
       zh: "家居与居住相关服务，让你的新家更舒适。",
       en: "Home and living services to make your place feel like home.",
@@ -102,7 +102,7 @@ export const services: Service[] = [
   {
     slug: "uswoo",
     icon: "🏢",
-    name: { zh: "美窝 USWOO", en: "USWOO Realty" },
+    name: { zh: "美窝 USWOO", en: "USWOO" },
     summary: {
       zh: "租房与安居服务，帮你找到适合的城市和住处。",
       en: "Rental and settling-in services to help you find your place in the city.",
@@ -165,7 +165,7 @@ export const services: Service[] = [
   {
     slug: "aura",
     icon: "💎",
-    name: { zh: "Aura Institute 医美", en: "Aura Institute Medical Spa" },
+    name: { zh: "Aura Institute 医美", en: "Aura Institute" },
     summary: {
       zh: "Aura Institute 医美服务介绍待补充。",
       en: "Aura Institute cosmetic care description coming soon.",
