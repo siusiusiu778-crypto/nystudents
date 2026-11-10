@@ -24,6 +24,7 @@ export default function Header({
     { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
     { href: `/${locale}/city`, label: t.nav.city, children: cityItems },
     { href: `/${locale}/news`, label: t.nav.news },
+    { href: `/${locale}/partnership`, label: t.nav.partnership },
     { href: `/${locale}/about`, label: t.nav.about },
     { href: `/${locale}/career`, label: t.nav.career },
   ];

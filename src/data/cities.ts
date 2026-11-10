@@ -11,7 +11,16 @@ export type City = {
 
 // 导航 City 下拉与城市页的条目，链接待补充
 export const cities: City[] = [
-  { slug: "boston", name: { zh: "波士顿", en: "Boston" }, url: "" },
-  { slug: "california", name: { zh: "加州", en: "California" }, url: "" },
-  { slug: "uk", name: { zh: "英国", en: "United Kingdom" }, url: "" },
+  { slug: "ny", name: { zh: "NYStudents", en: "NYStudents" }, url: "" },
+  {
+    slug: "boston",
+    name: { zh: "Boston Students", en: "Boston Students" },
+    url: "",
+  },
+  {
+    slug: "california",
+    name: { zh: "California Students", en: "California Students" },
+    url: "",
+  },
+  { slug: "uk", name: { zh: "UKStudents", en: "UKStudents" }, url: "" },
 ];

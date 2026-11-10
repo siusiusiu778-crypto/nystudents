@@ -6,6 +6,7 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
   const company = [
     { href: `/${locale}/city`, label: t.nav.city },
     { href: `/${locale}/news`, label: t.nav.news },
+    { href: `/${locale}/partnership`, label: t.nav.partnership },
     { href: `/${locale}/about`, label: t.nav.about },
     { href: `/${locale}/career`, label: t.nav.career },
     { href: `/${locale}/contact`, label: t.nav.contact },

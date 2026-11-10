@@ -8,6 +8,7 @@
     "services": "业务介绍",
     "city": "城市",
     "news": "新闻与故事",
+    "partnership": "合作伙伴",
     "about": "关于我们",
     "career": "职业机会",
     "contact": "联系我们"
@@ -118,6 +119,97 @@
       {
         "title": "如何申请",
         "desc": "投递简历方式与流程（待补充）"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "label": "OSSC 集团",
+      "title": "从纽约出发，陪伴人生每一个阶段。",
+      "subtitle": "OSSC 集团汇聚教育、职业发展、房产、保险、医疗健康与生活服务等专业业务。",
+      "cta": "探索我们的业务"
+    },
+    "story": {
+      "label": "关于我们",
+      "title": "我们的故事，关乎你的故事。",
+      "body": "我们最初只是想帮助国际学生在纽约站稳脚跟，如今已发展成更大的事业。今天，OSSC 汇聚多个业务，陪伴人们学习、工作、生活与成长。",
+      "cta": "我们的故事"
+    },
+    "businesses": {
+      "label": "我们的业务",
+      "title": "围绕你的生活而建的集团。",
+      "body": "从安家落户到求学深造、从职业发展到身心健康，我们的业务覆盖日常生活的方方面面。",
+      "brandsLabel": "品牌",
+      "cta": "探索我们的业务",
+      "groups": [
+        {
+          "icon": "🏠",
+          "title": "房产与生活",
+          "body": "通过租房、保险、物流与各类生活服务，让日常生活更轻松。",
+          "brands": "USWOO · OSSCINS Insurance · Skyline Express"
+        },
+        {
+          "icon": "🎓",
+          "title": "教育与职业",
+          "body": "帮助学生与职场人士规划教育、职业机会与下一步发展。",
+          "brands": "Luminary Education · Luminary Career"
+        },
+        {
+          "icon": "🌿",
+          "title": "健康与美丽",
+          "body": "通过专业的医疗与护理服务，守护个人健康、自信与身心状态。",
+          "brands": "The Smile Institute · Aura Institute"
+        },
+        {
+          "icon": "🌎",
+          "title": "地区服务与社群",
+          "body": "连接各城市与地区的留学生和本地社群，提供资源、支持与机会。",
+          "brandsLabel": "品牌与机构",
+          "brands": "NYStudents · UKStudents · Boston Students · Overseas Students Foundation"
+        }
+      ]
+    },
+    "network": {
+      "logosCaption": "我们的网络合作伙伴与机构",
+      "logoPending": "Logo（待补充）",
+      "label": "我们的网络",
+      "title": "本地连接，不断壮大的网络。",
+      "body": "从纽约到更多城市与社群，OSSC 通过不断扩大的业务与平台网络，将人们与本地资源、专业服务和机会连接起来。",
+      "cta": "探索我们的网络"
+    },
+    "connect": {
+      "label": "联系我们",
+      "title": "一起看看，下一步是什么。",
+      "body": "无论你想了解服务、洽谈合作，还是单纯想更多了解 OSSC，我们都期待听到你的声音。",
+      "cta": "联系我们"
+    },
+    "imagePending": "图片待补充",
+    "showcase": {
+      "label": "业务一览",
+      "title": "留学生活所需，一站解决",
+      "body": "从学业、求职到健康、租房与日常生活，OSSC 把值得信赖的服务汇聚在一起，服务留学生与家庭。",
+      "cta": "查看全部业务"
+    }
+  },
+  "partnership": {
+    "title": "合作伙伴",
+    "subtitle": "与 OSSC 携手，共同服务学生与社群。",
+    "blocks": [
+      {
+        "title": "为什么与我们合作",
+        "desc": "我们的网络与影响力（待补充）"
+      },
+      {
+        "title": "合作方式",
+        "desc": "品牌、社群与服务合作（待补充）"
+      },
+      {
+        "title": "现有合作伙伴",
+        "desc": "合作机构（待补充）"
+      },
+      {
+        "title": "联系我们",
+        "desc": "如何开启合作（待补充）"
       }
     ]
   }

@@ -8,6 +8,7 @@
     "services": "Services",
     "city": "City",
     "news": "News & Stories",
+    "partnership": "Partnership",
     "about": "About Us",
     "career": "Career",
     "contact": "Contact"
@@ -118,6 +119,97 @@
       {
         "title": "How to Apply",
         "desc": "Send your resume and we will get back to you (TBD)"
+      }
+    ]
+  },
+  "home": {
+    "hero": {
+      "label": "OSSC GROUP",
+      "title": "From New York, For Every Stage of Life.",
+      "subtitle": "OSSC Group brings together specialized businesses in education, career development, real estate, insurance, healthcare, and lifestyle services.",
+      "cta": "Explore Our Businesses"
+    },
+    "story": {
+      "label": "WHO WE ARE",
+      "title": "Our Story Is About Yours.",
+      "body": "What began as a way to help international students find their footing in New York has grown into something more. Today, OSSC brings together businesses that support people as they learn, work, live, and grow.",
+      "cta": "Our Story"
+    },
+    "businesses": {
+      "label": "OUR BUSINESSES",
+      "title": "A Group Built Around Your Life.",
+      "body": "From finding a place to call home to pursuing education, building a career, and caring for your well-being, our businesses support the different needs of everyday life.",
+      "brandsLabel": "Brands",
+      "cta": "Explore Our Businesses",
+      "groups": [
+        {
+          "icon": "🏠",
+          "title": "Real Estate & Lifestyle",
+          "body": "Making everyday life easier through housing, insurance, logistics, and essential services.",
+          "brands": "USWOO · OSSCINS Insurance · Skyline Express"
+        },
+        {
+          "icon": "🎓",
+          "title": "Education & Career",
+          "body": "Helping students and professionals navigate education, career opportunities, and their next steps.",
+          "brands": "Luminary Education · Luminary Career"
+        },
+        {
+          "icon": "🌿",
+          "title": "Health & Wellness",
+          "body": "Supporting personal health, confidence, and well-being through specialized care and services.",
+          "brands": "The Smile Institute · Aura Institute"
+        },
+        {
+          "icon": "🌎",
+          "title": "Regional Services & Community",
+          "body": "Connecting students and local communities with resources, support, and opportunities across different cities and regions.",
+          "brandsLabel": "Brands & Organizations",
+          "brands": "NYStudents · UKStudents · Boston Students · Overseas Students Foundation"
+        }
+      ]
+    },
+    "network": {
+      "logosCaption": "Trusted by partners and organizations across our network",
+      "logoPending": "Logo (TBD)",
+      "label": "OUR NETWORK",
+      "title": "Local Connections. A Growing Network.",
+      "body": "From New York to other cities and communities, OSSC connects people with local resources, professional services, and opportunities through its growing network of businesses and platforms.",
+      "cta": "Explore Our Network"
+    },
+    "connect": {
+      "label": "LET'S CONNECT",
+      "title": "Let's See What's Next, Together.",
+      "body": "Whether you're looking for a service, exploring a partnership, or simply want to learn more about OSSC, we'd love to hear from you.",
+      "cta": "Get in Touch"
+    },
+    "imagePending": "Image to be added",
+    "showcase": {
+      "label": "Showcase",
+      "title": "Everything You Need, In One Place",
+      "body": "From study and career to health, housing and daily life, OSSC brings trusted services together for students and families.",
+      "cta": "Explore Services"
+    }
+  },
+  "partnership": {
+    "title": "Partnership",
+    "subtitle": "Work with OSSC to reach and support students and communities.",
+    "blocks": [
+      {
+        "title": "Why Partner With Us",
+        "desc": "Our network and reach (TBD)"
+      },
+      {
+        "title": "Ways to Partner",
+        "desc": "Brand, community and service partnerships (TBD)"
+      },
+      {
+        "title": "Current Partners",
+        "desc": "Partner organizations (TBD)"
+      },
+      {
+        "title": "Get in Touch",
+        "desc": "How to start a conversation (TBD)"
       }
     ]
   }

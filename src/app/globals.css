@@ -5,12 +5,67 @@
   --background: #ffffff;
   --foreground: #141414;
   --brand: #0f0f0f;
-  --brand-soft: #f6f5f3;
+  --brand-soft: #f3f3f1;
   /* 点缀色：Logo 蓝，只用于小面积（链接、悬停、焦点），不做大色块 */
   --accent: #2e3191;
   --ink-soft: #656260;
   --ink-faint: #9c9894;
   --line: #e7e4e0;
+
+  /* ---- Background system：白 / 浅灰交替，首尾深色 ---- */
+  --surface-white: #ffffff;
+  --surface-gray: #f3f3f1;
+  --surface-dark: #141414; /* Hero */
+  --surface-dark-2: #262626; /* Closing */
+
+  /* 当前 Section 的文字与占位框色调，由 .l-bg-* 覆盖 */
+  --text-muted: rgba(0, 0, 0, 0.62);
+  --text-faint: rgba(0, 0, 0, 0.5);
+  --slot-bg: rgba(0, 0, 0, 0.05);
+  --slot-fg: rgba(0, 0, 0, 0.35);
+  --btn-bg: #0f0f0f;
+  --btn-fg: #ffffff;
+
+  /* ---- Spacing tokens（Mobile 默认，≤767px）----
+     所有 Section 的留白都从这里取值，不要在 Section 里单独写随机间距。 */
+  --space-container: 1440px; /* 内容最大宽度 */
+  --space-gutter: 20px; /* 页面左右 Padding */
+  --space-section-y: 64px; /* 普通 Section 上下 Padding */
+  --space-hero-y: 48px; /* Hero 独立上下 Padding */
+  --space-eyebrow-gap: 16px; /* 小标签 → 标题 */
+  --space-heading-gap: 20px; /* 标题 → 正文 */
+  --space-action-gap: 28px; /* 正文 → 按钮/链接 */
+  --space-block-gap: 40px; /* 标题区域 → 卡片/图片；两栏之间 */
+  --space-card-gap: 16px; /* 卡片之间 */
+  --space-card-pad: 16px; /* 卡片内边距 */
+}
+
+/* Tablet 768–1023px */
+@media (min-width: 768px) {
+  :root {
+    --space-gutter: 32px;
+    --space-section-y: 80px;
+    --space-hero-y: 72px;
+    --space-heading-gap: 24px;
+    --space-action-gap: 32px;
+    --space-block-gap: 48px;
+    --space-card-gap: 24px;
+    --space-card-pad: 24px;
+  }
+}
+
+/* Desktop ≥1024px */
+@media (min-width: 1024px) {
+  :root {
+    --space-gutter: clamp(32px, 5vw, 80px);
+    --space-section-y: 120px;
+    --space-hero-y: 96px;
+    --space-heading-gap: 28px;
+    --space-action-gap: 40px;
+    --space-block-gap: 48px;
+    --space-card-gap: 32px;
+    --space-card-pad: 32px;
+  }
 }
 
 @theme inline {
@@ -30,19 +85,96 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    var(--font-inter), "PingFang SC", "Hiragino Sans GB",
-    "Microsoft YaHei", Arial, sans-serif;
+    var(--font-inter), "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei",
+    Arial, sans-serif;
 }
 
 h1,
 h2,
 h3 {
   font-family:
-    var(--font-poppins), var(--font-inter), "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+    var(--font-poppins), var(--font-inter), "PingFang SC", "Hiragino Sans GB",
+    "Microsoft YaHei", sans-serif;
 }
 
 :focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
+}
+
+/* ---- Layout 工具类（用 @layer components，Tailwind 工具类仍可覆盖）---- */
+@layer components {
+  .l-container {
+    width: 100%;
+    max-width: calc(var(--space-container) + 2 * var(--space-gutter));
+    margin-inline: auto;
+    padding-inline: var(--space-gutter);
+  }
+
+  /* Section 只用 padding，不叠加 margin */
+  .l-section {
+    padding-block: var(--space-section-y);
+  }
+
+  .l-hero {
+    padding-block: var(--space-hero-y);
+  }
+
+  /* Section 背景：Full-Width，边界靠背景切换，不加 margin、圆角或阴影 */
+  .l-bg-white {
+    background: var(--surface-white);
+  }
+  .l-bg-gray {
+    background: var(--surface-gray);
+  }
+  .l-bg-dark,
+  .l-bg-dark-2 {
+    color: #ffffff;
+    --text-muted: rgba(255, 255, 255, 0.7);
+    --text-faint: rgba(255, 255, 255, 0.5);
+    --slot-bg: rgba(255, 255, 255, 0.08);
+    --slot-fg: rgba(255, 255, 255, 0.4);
+    --btn-bg: #ffffff;
+    --btn-fg: #141414;
+  }
+  .l-bg-dark {
+    background: var(--surface-dark);
+  }
+  .l-bg-dark-2 {
+    background: var(--surface-dark-2);
+  }
+
+  .t-muted {
+    color: var(--text-muted);
+  }
+  .t-faint {
+    color: var(--text-faint);
+  }
+  .btn-primary {
+    background: var(--btn-bg);
+    color: var(--btn-fg);
+  }
+
+  /* 两栏：Tablet 以下单列，Desktop 并排 */
+  .l-split {
+    display: grid;
+    align-items: center;
+    gap: var(--space-block-gap);
+  }
+  @media (min-width: 1024px) {
+    .l-split {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  /* 卡片网格：Mobile 单列，Tablet 起两列 */
+  .l-cards {
+    display: grid;
+    gap: var(--space-card-gap);
+  }
+  @media (min-width: 768px) {
+    .l-cards {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
 }
