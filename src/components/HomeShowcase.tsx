@@ -44,7 +44,7 @@ export function ShowcaseFan({ copy, href }: { copy: Copy; href: string }) {
     <section
       ref={ref}
       onMouseEnter={() => setOpen(true)}
-      className="l-section overflow-hidden bg-[var(--background-warm,#f8f4ec)]"
+      className="l-section overflow-hidden bg-[var(--surface-gray)]"
     >
       <div className="l-container text-center">
         <h2 className="mx-auto max-w-3xl text-4xl font-bold leading-[1.1] text-balance sm:text-6xl">

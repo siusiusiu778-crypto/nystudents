@@ -6,7 +6,9 @@ type Text = Record<Locale, string>;
 export const aura = {
   eyebrow: { en: "Medical Aesthetics & Wellness", zh: "医美与健康管理" },
   hero: {
-    title: { en: "Feel Good in Your Own Skin.", zh: "做自在舒适的自己。" },
+    title: { en: "Aura Institute by SXY", zh: "Aura Institute by SXY" },
+    /** Hero 按钮：有 cta.url 时跳 Aura 官网，否则滚动到下方服务项目 */
+    cta: { en: "Learn More", zh: "了解更多" },
     body: {
       en: "Located at Rockefeller Center in New York City, AURA Institute brings together advanced medical aesthetics and personalized wellness care.",
       zh: "AURA Institute 位于纽约洛克菲勒中心，融合先进医美技术与个性化健康护理。",
@@ -90,3 +92,11 @@ export const aura = {
     button: { en: "Explore AURA Institute", zh: "了解 AURA Institute" },
   },
 };
+
+/** 四个服务项目的配图（顺序同 services.items）。留空则显示「图片待补充」。 */
+export const auraServiceImages: string[] = [
+  "/images/aura-face.png", // Face Design
+  "/images/aura-skin.png", // Skin & Glow
+  "/images/aura-massage.png", // Wellness & Longevity
+  "/images/aura-body.png", // Body Contouring
+];

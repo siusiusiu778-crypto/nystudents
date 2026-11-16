@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Dictionary, Locale } from "@/lib/i18n";
 import { cities } from "@/data/cities";
-import { services } from "@/data/services";
+import { servicesByDisplay } from "@/data/services";
 import LanguageSwitch from "./LanguageSwitch";
 import MobileMenu from "./MobileMenu";
 
@@ -12,7 +12,7 @@ export default function Header({
   locale: Locale;
   t: Dictionary;
 }) {
-  const serviceItems = services.map((s) => ({
+  const serviceItems = servicesByDisplay.map((s) => ({
     href: `/${locale}/services/${s.slug}`,
     label: s.name[locale],
   }));

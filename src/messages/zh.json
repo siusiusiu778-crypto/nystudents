@@ -152,7 +152,7 @@
           "icon": "🎓",
           "title": "教育与职业",
           "body": "帮助学生与职场人士规划教育、职业机会与下一步发展。",
-          "brands": "Luminary Education · Luminary Career"
+          "brands": "Luminary Education · Luminary Career · Overseas Students Foundation"
         },
         {
           "icon": "🌿",
@@ -165,7 +165,7 @@
           "title": "地区服务与社群",
           "body": "连接各城市与地区的留学生和本地社群，提供资源、支持与机会。",
           "brandsLabel": "品牌与机构",
-          "brands": "NYStudents · UKStudents · Boston Students · Overseas Students Foundation"
+          "brands": "NYStudents · UKStudents · Boston Students"
         }
       ]
     },

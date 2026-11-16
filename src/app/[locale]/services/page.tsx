@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import ContactSection from "@/components/ContactSection";
 import PageHero from "@/components/PageHero";
 import ServiceGrid from "@/components/ServiceGrid";
 import { getDictionary, hasLocale } from "@/lib/i18n";
@@ -16,11 +15,12 @@ export default async function ServicesPage({ params }: PageProps<"/[locale]/serv
   const t = getDictionary(locale);
   return (
     <>
-      <PageHero title={t.servicesPage.title} subtitle={t.servicesPage.subtitle} />
-      <section className="mx-auto max-w-6xl px-4 pt-12">
-        <ServiceGrid locale={locale} t={t} />
+      <PageHero white center title={t.servicesPage.title} />
+      <section className="bg-[var(--surface-white)] pb-14">
+        <div className="mx-auto max-w-6xl px-4">
+          <ServiceGrid locale={locale} t={t} />
+        </div>
       </section>
-      <ContactSection t={t} />
     </>
   );
 }

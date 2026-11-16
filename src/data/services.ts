@@ -188,9 +188,32 @@ const serviceList: Service[] = [
   },
 ];
 
-// 首页、导航下拉、页脚统一按英文名首字母排序（中英文页面顺序一致），新增业务线无需手动排位置
+// services：按英文名首字母排序的基础列表（中英文页面顺序一致）。
+// 实际展示顺序见下面的 servicesByDisplay。
 export const services: Service[] = [...serviceList].sort((a, b) =>
   a.name.en.localeCompare(b.name.en, "en", { sensitivity: "base" }),
 );
 
 export const getService = (slug: string) => services.find((s) => s.slug === slug);
+
+/**
+ * Services 页卡片、导航下拉、页脚使用的展示顺序（未列出的排在最后，按字母序）。
+ * 要改顺序只改这里。
+ */
+const displayOrder = [
+  "uswoo",
+  "aura",
+  "tsi",
+  "celehome",
+  "liuming",
+  "luminary-career",
+  "insurance",
+  "express",
+  "wukong",
+  "foundation",
+];
+export const servicesByDisplay: Service[] = [...services].sort((a, b) => {
+  const ia = displayOrder.indexOf(a.slug);
+  const ib = displayOrder.indexOf(b.slug);
+  return (ia < 0 ? 99 : ia) - (ib < 0 ? 99 : ib);
+});

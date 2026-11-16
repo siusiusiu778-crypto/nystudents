@@ -7,6 +7,7 @@ export default function ImageSlot({
   t,
   className = "aspect-[4/3] rounded-sm",
   priority = false,
+  imgClassName = "object-cover",
   sizes = "(min-width: 1152px) 560px, 100vw",
 }: {
   src: string;
@@ -14,6 +15,7 @@ export default function ImageSlot({
   t: Dictionary;
   className?: string;
   priority?: boolean;
+  imgClassName?: string;
   sizes?: string;
 }) {
   return (
@@ -27,7 +29,7 @@ export default function ImageSlot({
           fill
           priority={priority}
           sizes={sizes}
-          className="object-cover"
+          className={imgClassName}
         />
       ) : (
         <div className="flex h-full w-full items-center justify-center text-sm text-[color:var(--slot-fg)]">

@@ -2,28 +2,29 @@
 
 /* 设计变量参考 USWOO 官网（黑白极简），主站保持中性，各业务线保留自己的点缀色 */
 :root {
-  --background: #ffffff;
-  --foreground: #141414;
-  --brand: #0f0f0f;
-  --brand-soft: #f3f3f1;
-  /* 点缀色：Logo 蓝，只用于小面积（链接、悬停、焦点），不做大色块 */
-  --accent: #2e3191;
-  --ink-soft: #656260;
-  --ink-faint: #9c9894;
-  --line: #e7e4e0;
+  /* 配色方案：Brand Blue #282F83 / Champagne #C7B393 / Background #FCFAF6 / Text #303038 / Muted #857D75 / White #FFFFFF */
+  --background: #fcfaf6;
+  --foreground: #303038;
+  --brand: #282f83;
+  --brand-soft: #ffffff;
+  --accent: #282f83;
+  --champagne: #c7b393;
+  --ink-soft: #857d75;
+  --ink-faint: #b0a89e;
+  --line: #e6dfd3;
 
-  /* ---- Background system：白 / 浅灰交替，首尾深色 ---- */
-  --surface-white: #ffffff;
-  --surface-gray: #f3f3f1;
-  --surface-dark: #141414; /* Hero */
-  --surface-dark-2: #262626; /* Closing */
+  /* ---- Background system：米白 / 白色交替，首尾深色 ---- */
+  --surface-white: #fcfaf6;
+  --surface-gray: #ffffff;
+  --surface-dark: #303038; /* Hero / Footer */
+  --surface-dark-2: #303038; /* Closing */
 
   /* 当前 Section 的文字与占位框色调，由 .l-bg-* 覆盖 */
-  --text-muted: rgba(0, 0, 0, 0.62);
-  --text-faint: rgba(0, 0, 0, 0.5);
-  --slot-bg: rgba(0, 0, 0, 0.05);
-  --slot-fg: rgba(0, 0, 0, 0.35);
-  --btn-bg: #0f0f0f;
+  --text-muted: rgba(48, 48, 56, 0.68);
+  --text-faint: rgba(48, 48, 56, 0.5);
+  --slot-bg: rgba(199, 179, 147, 0.18);
+  --slot-fg: rgba(48, 48, 56, 0.35);
+  --btn-bg: #282f83;
   --btn-fg: #ffffff;
 
   /* ---- Spacing tokens（Mobile 默认，≤767px）----
@@ -82,6 +83,7 @@
 }
 
 body {
+  overflow-x: clip;
   background: var(--background);
   color: var(--foreground);
   font-family:
@@ -135,7 +137,7 @@ h3 {
     --slot-bg: rgba(255, 255, 255, 0.08);
     --slot-fg: rgba(255, 255, 255, 0.4);
     --btn-bg: #ffffff;
-    --btn-fg: #141414;
+    --btn-fg: #303038;
   }
   .l-bg-dark {
     background: var(--surface-dark);
@@ -176,5 +178,206 @@ h3 {
     .l-cards {
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
+  }
+}
+
+/* ---- 首页 Our Network 城市条：悬停展开动效 ----
+   默认：等宽；悬停：该条平滑展开到约 2.5–3 倍宽，其余条收缩，城市名淡入上移。
+   图片本身不加滤镜/遮罩/缩放，保持原图清晰；图片层宽度固定并居中，展开时只是「露出更多」，建筑主体位置不跳动。
+   缓动 cubic-bezier(0.22, 1, 0.36, 1)，时长 700ms。 */
+@layer components {
+  .net-strip {
+    --net-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    transition: flex-grow 700ms var(--net-ease);
+  }
+  /* 渐变模糊玻璃：6 层 backdrop-filter，模糊半径 1→32px 逐级加倍，
+     每层用遮罩只在自己的一段内渐显，叠加后从上（无）到下（最强）平滑过渡 */
+  .net-glass {
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 14%;
+    min-height: 56px;
+    pointer-events: none;
+  }
+  .net-glass i {
+    position: absolute;
+    inset: 0;
+  }
+  .net-glass i:nth-child(1) {
+    backdrop-filter: blur(1px);
+    mask-image: linear-gradient(to bottom, transparent 0%, #000 12.5%, #000 25%, transparent 37.5%);
+  }
+  .net-glass i:nth-child(2) {
+    backdrop-filter: blur(2px);
+    mask-image: linear-gradient(to bottom, transparent 12.5%, #000 25%, #000 37.5%, transparent 50%);
+  }
+  .net-glass i:nth-child(3) {
+    backdrop-filter: blur(4px);
+    mask-image: linear-gradient(to bottom, transparent 25%, #000 37.5%, #000 50%, transparent 62.5%);
+  }
+  .net-glass i:nth-child(4) {
+    backdrop-filter: blur(8px);
+    mask-image: linear-gradient(to bottom, transparent 37.5%, #000 50%, #000 62.5%, transparent 75%);
+  }
+  .net-glass i:nth-child(5) {
+    backdrop-filter: blur(16px);
+    mask-image: linear-gradient(to bottom, transparent 50%, #000 62.5%, #000 75%, transparent 87.5%);
+  }
+  .net-glass i:nth-child(6) {
+    backdrop-filter: blur(32px);
+    mask-image: linear-gradient(to bottom, transparent 62.5%, #000 75%);
+  }
+  .net-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.18em;
+    opacity: 0.85;
+    transform: translateY(0);
+    transition:
+      opacity 600ms var(--net-ease),
+      transform 700ms var(--net-ease),
+      font-size 700ms var(--net-ease),
+      letter-spacing 700ms var(--net-ease);
+  }
+  .net-dash {
+    width: 1rem;
+    transition: width 700ms var(--net-ease);
+  }
+  /* 有条被悬停时，其余条略暗、文字变淡 */
+  .net-strips:hover .net-strip:not(:hover) .net-label {
+    opacity: 0.6;
+  }
+  /* 收缩后的窄条：城市名略缩小、字距收紧，避免被裁切（如 PENNSYLVANIA） */
+  @media (min-width: 1024px) {
+    .net-label {
+      font-size: 0.75rem;
+    }
+    .net-strips:hover .net-strip:not(:hover) .net-label {
+      font-size: 0.58rem;
+      letter-spacing: 0.05em;
+    }
+  }
+  /* 被悬停的条 */
+  .net-strip:hover .net-label {
+    opacity: 1;
+    transform: translateY(-4px);
+  }
+  .net-strip:hover .net-dash {
+    width: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .net-strip {
+      flex: 1 1 0%;
+    }
+    /* 相邻条重叠 1px，消除展开动画中亚像素产生的发丝缝隙，卡片之间不留空隙 */
+    .net-strip + .net-strip {
+      margin-left: -1px;
+    }
+    .net-strip:hover {
+      flex-grow: 5.1; /* 5 条时 ≈ 原宽的 2.8 倍 */
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .net-strip,
+    .net-label,
+    .net-dash {
+      transition: none;
+    }
+  }
+}
+
+/* 首页 Our Network 对比版 K：城市卡片横向循环滚动 */
+@keyframes net-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+.net-marquee {
+  animation: net-marquee 40s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .net-marquee {
+    animation: none;
+  }
+}
+
+/* 首页 Showcase 对比版：双列图片上下循环滚动 */
+@keyframes show-col-up {
+  to {
+    transform: translateY(-50%);
+  }
+}
+@keyframes show-col-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+.show-col-up {
+  animation: show-col-up 38s linear infinite paused;
+}
+.show-col-down {
+  animation: show-col-down 38s linear infinite paused;
+}
+/* 滚动到这一块之前保持在起始画面（左列第一张是校园），进入视口后才开始滚动 */
+[data-run="true"] .show-col-up,
+[data-run="true"] .show-col-down {
+  animation-play-state: running;
+}
+@media (prefers-reduced-motion: reduce) {
+  .show-col-up,
+  .show-col-down {
+    animation: none;
+  }
+}
+
+/* 对比版：横向跑马灯反向（向右） */
+@keyframes show-row-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+.show-row-right {
+  animation: show-row-right 45s linear infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .show-row-right {
+    animation: none;
+  }
+}
+
+/* 对比版：大图渐变轮播，7 张 × 每张 4 秒，共 28 秒一轮 */
+@keyframes show-fade {
+  0% {
+    opacity: 0;
+  }
+  4% {
+    opacity: 1;
+  }
+  14.3% {
+    opacity: 1;
+  }
+  18.5% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.show-fade {
+  opacity: 0;
+  animation: show-fade 28s infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .show-fade {
+    animation: none;
+  }
+  .show-fade:first-child {
+    opacity: 1;
   }
 }

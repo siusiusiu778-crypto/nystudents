@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>路牌绕柱旋转</title>
+<style>
+  :root{--D:100vw}   /* 盒子的进深，等于画面宽度，保证正面刚好铺满屏幕 */
+  html,body{margin:0;height:100%;background:#16120e;overflow:hidden}
+  .stage{position:fixed;inset:0;perspective:calc(var(--D)*1.4);perspective-origin:50% 50%;overflow:hidden}
+
+  /* 盒子：四个面首尾相接，转动时相邻两面拼成墙角，中间没有空隙，所以不会黑屏，也不需要淡入淡出 */
+  .box{position:absolute;inset:0;transform-style:preserve-3d;animation:turn 10s cubic-bezier(.65,0,.35,1) infinite}
+  .face{position:absolute;inset:0;overflow:hidden;background:#222}
+  .face img,.flip{position:absolute;inset:0;width:100%;height:100%}
+  .face img{object-fit:cover}
+  .flip{transform:scaleX(-1)}               /* 侧面用镜像图，和相邻的面无缝衔接 */
+  .ia{transform:scale(1.2)}
+  .ib{transform:translateX(-11vw) scale(1.2)} /* 图2的柱子对齐到中央 */
+
+  .f-front{transform:translateZ(calc(var(--D)*.5))}
+  .f-right{transform:rotateY(90deg)  translateZ(calc(var(--D)*.5))}
+  .f-back {transform:rotateY(180deg) translateZ(calc(var(--D)*.5))}
+  .f-left {transform:rotateY(-90deg) translateZ(calc(var(--D)*.5))}
+
+  /* 节奏：0-38% 停在图1；38-50% 转到图2；50-88% 停住；88-100% 同方向再转回图1（共 360°） */
+  @keyframes turn{
+    0%,38%  {transform:translateZ(calc(var(--D)*-.5)) rotateY(0)}
+    50%,88% {transform:translateZ(calc(var(--D)*-.5)) rotateY(-180deg)}
+    100%    {transform:translateZ(calc(var(--D)*-.5)) rotateY(-360deg)}
+  }
+  .caption{position:fixed;left:0;right:0;bottom:6%;text-align:center;color:#fff;z-index:9;
+           font:600 clamp(14px,2vw,22px)/1 -apple-system,"PingFang SC",sans-serif;letter-spacing:.3em;
+           text-shadow:0 2px 12px rgba(0,0,0,.6);pointer-events:none}
+  @media (prefers-reduced-motion:reduce){.box{animation:none}}
+</style>
+</head>
+<body>
+<div class="stage">
+  <div class="box">
+    <div class="face f-front"><img class="ia" src="/images/signpost-luminary.webp" alt="Luminary"></div>
+    <div class="face f-right"><div class="flip"><img class="ia" src="/images/signpost-luminary.webp" alt=""></div></div>
+    <div class="face f-back"><img class="ib" src="/images/signpost-uswoo.webp" alt="USWOO"></div>
+    <div class="face f-left"><div class="flip"><img class="ib" src="/images/signpost-uswoo.webp" alt=""></div></div>
+  </div>
+</div>
+<div class="caption">NY STUDENTS NETWORK</div>
+</body>
+</html>

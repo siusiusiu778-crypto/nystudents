@@ -26,7 +26,7 @@ export default function ShowcaseCarousel({ copy, href }: { copy: Copy; href: str
 
   return (
     <section
-      className="l-section relative overflow-hidden bg-[var(--background-warm,#f8f4ec)]"
+      className="l-section relative overflow-hidden bg-[var(--surface-white)]"
     >
       <div className="l-container text-center">
         <h2 className="mx-auto max-w-3xl text-4xl font-bold leading-[1.1] text-balance sm:text-6xl">

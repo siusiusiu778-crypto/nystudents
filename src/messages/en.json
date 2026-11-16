@@ -152,7 +152,7 @@
           "icon": "🎓",
           "title": "Education & Career",
           "body": "Helping students and professionals navigate education, career opportunities, and their next steps.",
-          "brands": "Luminary Education · Luminary Career"
+          "brands": "Luminary Education · Luminary Career · Overseas Students Foundation"
         },
         {
           "icon": "🌿",
@@ -162,10 +162,10 @@
         },
         {
           "icon": "🌎",
-          "title": "Regional Services & Community",
+          "title": "Regional & Community",
           "body": "Connecting students and local communities with resources, support, and opportunities across different cities and regions.",
           "brandsLabel": "Brands & Organizations",
-          "brands": "NYStudents · UKStudents · Boston Students · Overseas Students Foundation"
+          "brands": "NYStudents · UKStudents · Boston Students"
         }
       ]
     },

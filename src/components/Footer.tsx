@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { services } from "@/data/services";
+import { servicesByDisplay } from "@/data/services";
 import type { Dictionary, Locale } from "@/lib/i18n";
 
 export default function Footer({ locale, t }: { locale: Locale; t: Dictionary }) {
@@ -12,20 +12,19 @@ export default function Footer({ locale, t }: { locale: Locale; t: Dictionary })
     { href: `/${locale}/contact`, label: t.nav.contact },
   ];
   // 业务线平分两列
-  const half = Math.ceil(services.length / 2);
-  const serviceCols = [services.slice(0, half), services.slice(half)];
+  const half = Math.ceil(servicesByDisplay.length / 2);
+  const serviceCols = [
+    servicesByDisplay.slice(0, half),
+    servicesByDisplay.slice(half),
+  ];
   const labelClass =
     "mb-3 text-[0.72rem] font-semibold tracking-[0.1em] text-white/50 uppercase";
   const linkClass = "text-[0.9rem] text-white/80 transition-colors hover:text-white";
 
   return (
-    <footer className="mt-20 bg-black pt-12 text-white">
+    <footer className="mt-20 bg-[var(--surface-dark)] pt-12 text-white">
       <div className="mx-auto max-w-[1180px] px-[clamp(20px,5vw,56px)]">
         <div className="flex flex-wrap justify-between gap-8 border-b border-white/15 pb-10">
-          <div className="min-w-[200px] max-w-xs">
-            <div className={labelClass}>{t.siteName}</div>
-            <p className="text-[0.86rem] leading-[1.7] text-white/60">{t.tagline}</p>
-          </div>
           <div>
             <div className={labelClass}>{t.footer.services}</div>
             <div className="grid grid-cols-2 gap-x-10 sm:gap-x-14">
