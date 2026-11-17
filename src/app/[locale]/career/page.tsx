@@ -58,7 +58,7 @@ export default async function CareerPage({ params }: PageProps<"/[locale]/career
       </section>
 
       {/* 02 Why join */}
-      <section className="l-section l-bg-gray">
+      <section id="why" className="l-section l-bg-gray scroll-mt-16">
         <div className="l-container">
           {eyebrow(c.why.label[locale])}
           <h2 className="max-w-3xl text-3xl leading-[1.1] font-bold text-balance sm:text-5xl">
@@ -93,7 +93,7 @@ export default async function CareerPage({ params }: PageProps<"/[locale]/career
       </section>
 
       {/* 04 CTA —— 居中、白底、双按钮（-mb-20 抵消页脚的 mt-20） */}
-      <section className="l-section l-bg-gray -mb-20">
+      <section id="apply" className="l-section l-bg-gray -mb-20 scroll-mt-16">
         <div className="mx-auto max-w-3xl px-[var(--space-gutter)] py-8 text-center sm:py-12">
           <p className="mb-[var(--space-eyebrow-gap)] text-sm font-bold tracking-widest">
             <span className="text-[#282f83]">04</span>{" "}

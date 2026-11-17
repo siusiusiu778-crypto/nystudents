@@ -55,7 +55,7 @@ export default async function NewsPage({
         </p>
 
         {/* 头条 */}
-        <article className="relative mt-8 aspect-[4/5] overflow-hidden rounded-[20px] bg-[var(--slot-bg)] sm:aspect-[16/8]">
+        <article id="headlines" className="relative mt-8 scroll-mt-24 aspect-[4/5] overflow-hidden rounded-[20px] bg-[var(--slot-bg)] sm:aspect-[16/8]">
           <Image
             src={lead.img}
             alt=""
@@ -89,7 +89,7 @@ export default async function NewsPage({
         </article>
 
         {/* 精选文章 */}
-        <div className="mt-14 flex items-center justify-between gap-4">
+        <div id="featured" className="mt-14 flex scroll-mt-24 items-center justify-between gap-4">
           <h2 className="text-2xl font-bold sm:text-3xl">
             {L.featured[locale]}
           </h2>

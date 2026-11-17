@@ -59,7 +59,7 @@ export default async function PartnershipPage({
       </section>
 
       {/* 02 Why OSSC */}
-      <section className="l-section l-bg-white">
+      <section id="why" className="l-section l-bg-white scroll-mt-16">
         <div className="l-container grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
           <div>
             {eyebrow(p.why.label[locale])}
@@ -76,7 +76,7 @@ export default async function PartnershipPage({
       </section>
 
       {/* 03 Our strengths */}
-      <section className="l-section l-bg-gray">
+      <section id="strengths" className="l-section l-bg-gray scroll-mt-16">
         <div className="l-container">
           {eyebrow(p.strengths.label[locale])}
           <h2 className="max-w-3xl text-3xl leading-[1.1] font-bold text-balance sm:text-5xl">
@@ -103,7 +103,7 @@ export default async function PartnershipPage({
       </section>
 
       {/* 04 How we collaborate */}
-      <section className="l-section l-bg-white">
+      <section id="collaborate" className="l-section l-bg-white scroll-mt-16">
         <div className="l-container">
           {eyebrow(p.collaborate.label[locale])}
           <h2 className="max-w-3xl text-3xl leading-[1.1] font-bold text-balance sm:text-5xl">

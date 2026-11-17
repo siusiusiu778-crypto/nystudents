@@ -58,7 +58,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
       </section>
 
       {/* 02 Our journey：时间轴 */}
-      <section className="l-section l-bg-white">
+      <section id="journey" className="l-section l-bg-white scroll-mt-16">
         <div className="l-container">
           <div className="grid gap-10 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
             <div>
@@ -87,7 +87,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
       </section>
 
       {/* 03 Our culture：大标题 + 导语，下方拼贴（大图 / 小图 / 蓝色文字卡） */}
-      <section className="l-section l-bg-gray">
+      <section id="culture" className="l-section l-bg-gray scroll-mt-16">
         <div className="l-container">
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end lg:gap-16">
             <div className="lg:col-span-7">
@@ -128,7 +128,7 @@ export default async function AboutPage({ params }: PageProps<"/[locale]/about">
       </section>
 
       {/* 04 Looking ahead：圆角图片面板 */}
-      <section className="l-section l-bg-white">
+      <section id="ahead" className="l-section l-bg-white scroll-mt-16">
         <div className="l-container">
           <div className="relative overflow-hidden rounded-[20px] bg-[var(--brand)] text-white [--btn-bg:#ffffff] [--btn-fg:#282f83] [--text-faint:rgba(255,255,255,0.6)]">
             <Image

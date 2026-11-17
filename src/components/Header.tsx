@@ -20,13 +20,21 @@ export default function Header({
     href: c.url || `/${locale}/city#${c.slug}`,
     label: c.name[locale],
   }));
+  const sub = (
+    path: string,
+    items: [string, string, string][],
+  ) =>
+    items.map(([id, en, zh]) => ({
+      href: `/${locale}/${path}#${id}`,
+      label: locale === "zh" ? zh : en,
+    }));
   const links = [
     { href: `/${locale}/services`, label: t.nav.services, children: serviceItems },
     { href: `/${locale}/city`, label: t.nav.city, children: cityItems },
-    { href: `/${locale}/news`, label: t.nav.news },
-    { href: `/${locale}/partnership`, label: t.nav.partnership },
-    { href: `/${locale}/about`, label: t.nav.about },
-    { href: `/${locale}/career`, label: t.nav.career },
+    { href: `/${locale}/news`, label: t.nav.news, children: sub("news", [["headlines","Key Updates","重大信息"],["featured","Client Stories","客户故事"]]) },
+    { href: `/${locale}/partnership`, label: t.nav.partnership, children: sub("partnership", [["why","Why","理由"],["strengths","Strengths","优势"],["collaborate","Collaboration","合作"],["contact","Contact","联系"]]) },
+    { href: `/${locale}/about`, label: t.nav.about, children: sub("about", [["journey","Journey","历程"],["culture","Culture","文化"],["ahead","Future","未来"]]) },
+    { href: `/${locale}/career`, label: t.nav.career, children: sub("career", [["why","Why join us","加入我们"],["roles","Roles","职位"],["apply","Apply","申请"]]) },
   ];
   const cta = { href: `/${locale}/contact`, label: t.nav.contact };
 
