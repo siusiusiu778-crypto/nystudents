@@ -41,20 +41,6 @@ export default function MobileMenu({
               >
                 {l.label}
               </Link>
-              {l.children && (
-                <div className="-mt-2 pb-3 pl-4">
-                  {l.children.map((c) => (
-                    <Link
-                      key={c.href}
-                      href={c.href}
-                      onClick={() => setOpen(false)}
-                      className="block py-2 text-[0.9rem] text-ink-soft"
-                    >
-                      {c.label}
-                    </Link>
-                  ))}
-                </div>
-              )}
             </div>
           ))}
         </div>
